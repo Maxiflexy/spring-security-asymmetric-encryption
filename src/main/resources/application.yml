@@ -20,7 +20,6 @@ spring:
       hibernate:
         format_sql: true
 
-# these properties need to be well organized across the different ENV
 app:
   security:
     jwt:
