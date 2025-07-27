@@ -1,5 +1,6 @@
 package com.maxiflexy.app.user;
 
+import com.maxiflexy.app.auth.request.RegistrationRequest;
 import com.maxiflexy.app.user.request.ProfileUpdateRequest;
 import lombok.RequiredArgsConstructor;
 import org.apache.commons.lang3.StringUtils;
