@@ -1,5 +1,6 @@
 package com.maxiflexy.app.auth.request;
 
+import com.maxiflexy.app.validation.NonDisposableEmail;
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -28,7 +29,7 @@ public class RegistrationRequest {
             regexp = "^[\\p{L} '-]+$",
             message = "VALIDATION.REGISTRATION.FIRST_NAME.PATTERN"
     )
-    @Schema(example = "Ali")
+    @Schema(example = "Maxiflexy")
     String firstName;
 
     @NotBlank(message = "VALIDATION.REGISTRATION.LAST_NAME.BLANK")
@@ -41,20 +42,20 @@ public class RegistrationRequest {
             regexp = "^[\\p{L} '-]+$",
             message = "VALIDATION.REGISTRATION.LAST_NAME.PATTERN"
     )
-    @Schema(example = "Bouali")
+    @Schema(example = "Onyekachi")
     String lastName;
 
     @NotBlank(message = "VALIDATION.REGISTRATION.EMAIL.BLANK")
     @Email(message = "VALIDATION.REGISTRATION.EMAIL.FORMAT")
     @NonDisposableEmail(message = "VALIDATION.REGISTRATION.EMAIL.DISPOSABLE")
-    @Schema(example = "ali@mail.com")
+    @Schema(example = "maxiflexy@mail.com")
     String email;
 
     @NotBlank(message = "VALIDATION.REGISTRATION.PHONE.BLANK")
-    @Pattern(regexp = "^\\+?[1-9]\\d{1,14}$",
+    @Pattern(regexp = "^\\+?[0-9]\\d{10,14}$",
             message = "VALIDATION.REGISTRATION.PHONE.FORMAT"
     )
-    @Schema(example = "+4912389765634")
+    @Schema(example = "+2348187626932")
     String phoneNumber;
 
     @NotBlank(message = "VALIDATION.REGISTRATION.PASSWORD.BLANK")
