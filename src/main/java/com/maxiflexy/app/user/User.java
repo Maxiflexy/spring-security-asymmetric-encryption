@@ -1,17 +1,8 @@
 package com.maxiflexy.app.user;
 
 import com.maxiflexy.app.role.Role;
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.EntityListeners;
-import jakarta.persistence.FetchType;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.JoinTable;
-import jakarta.persistence.ManyToMany;
-import jakarta.persistence.Table;
+import com.maxiflexy.app.todo.Todo;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -104,6 +95,9 @@ public class User implements UserDetails {
             }
     )
     private List<Role> roles;
+
+    @OneToMany(mappedBy = "user")
+    private List<Todo> todos;
 
     public void addRole(final Role role) {
         this.roles.add(role);
